@@ -4,9 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>SkillHub Portfolio</title>
+  <title>SkillHub Portfolio | Sithum</title>
+
+  <meta
+    name="description"
+    content="SkillHub Portfolio is a professional developer portfolio website showcasing skills, projects, certificates and learning journey."
+  />
+
+  <meta
+    name="keywords"
+    content="portfolio, web developer, flutter developer, firebase, javascript, sithum"
+  />
+
+  <meta name="author" content="Sithum" />
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/image1.jpg" />
 </head>
 <body>
 
@@ -15,6 +28,9 @@
     <div class="loader"></div>
     <p>Loading SkillHub...</p>
   </div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scrollProgress"></div>
 
   <!-- Navbar -->
   <header class="navbar">
@@ -31,8 +47,8 @@
     </nav>
 
     <div class="nav-actions">
-      <button id="themeBtn">🌙</button>
-      <button id="menuBtn">☰</button>
+      <button id="themeBtn" title="Change Theme">🌙</button>
+      <button id="menuBtn" title="Open Menu">☰</button>
     </div>
   </header>
 
@@ -47,7 +63,7 @@
       <p>
         I am building my skills in web development, mobile app development,
         Firebase, Node.js and modern software technologies through practical
-        projects.
+        real-world projects.
       </p>
 
       <div class="hero-buttons">
@@ -58,36 +74,38 @@
     </div>
 
     <div class="hero-card">
-      <h3>My Focus</h3>
+      <h3>My Technical Focus</h3>
       <p>HTML • CSS • JavaScript</p>
       <p>Flutter • Firebase • Node.js</p>
       <p>UI/UX • Problem Solving</p>
+      <p>GitHub • Deployment • Portfolio</p>
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about" class="section">
+    <p class="section-subtitle">Who I Am</p>
     <h2>About Me</h2>
 
     <p>
-      <p>
-  I am a passionate software development learner focused on building practical
-  web and mobile applications. I enjoy learning modern technologies such as
-  HTML, CSS, JavaScript, Flutter, Firebase and Node.js while improving my
-  problem-solving and UI/UX design skills.
-</p>
+      I am a passionate software development learner focused on building
+      practical web and mobile applications. I enjoy learning modern
+      technologies such as HTML, CSS, JavaScript, Flutter, Firebase and Node.js
+      while improving my problem-solving and UI/UX design skills.
     </p>
 
     <ul class="focus-list">
       <li>Building responsive and modern websites</li>
-      <li>Developing mobile apps using Flutter</li>
+      <li>Developing mobile applications using Flutter</li>
       <li>Learning backend development with Node.js</li>
-      <li>Using Firebase for authentication and databases</li>
+      <li>Using Firebase for authentication and database features</li>
+      <li>Improving GitHub, deployment and portfolio presentation skills</li>
     </ul>
   </section>
 
   <!-- Skills Section -->
   <section id="skills" class="section">
+    <p class="section-subtitle">Technical Stack</p>
     <h2>My Skills</h2>
 
     <div class="skills-container">
@@ -155,37 +173,65 @@
 
   <!-- Projects Section -->
   <section id="projects" class="section">
+    <p class="section-subtitle">Portfolio Work</p>
     <h2>My Projects</h2>
 
+    <p>
+      These projects show my learning progress, technical skills and ability to
+      build real-world web and mobile applications.
+    </p>
+
+    <!-- Project Filter Buttons -->
+    <div class="project-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="mobile">Mobile</button>
+      <button class="filter-btn" data-filter="firebase">Firebase</button>
+      <button class="filter-btn" data-filter="javascript">JavaScript</button>
+    </div>
+
     <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-icon">📱</div>
+
+      <!-- Project 1 -->
+      <div class="project-card" data-category="mobile firebase flutter">
+        <div class="project-top">
+          <div class="project-icon">📱</div>
+          <span class="status-badge">In Progress</span>
+        </div>
 
         <h3>LifeOS Mobile App</h3>
 
-<p>
-  A personal productivity and life management mobile application built using
-  Flutter and Firebase. It includes task management, finance tracking, goals,
-  notes, analytics and user authentication.
-</p>
+        <p>
+          A personal productivity and life management mobile application built
+          using Flutter and Firebase. It includes tasks, finance tracking,
+          goals, notes, analytics and user authentication.
+        </p>
 
         <div class="project-tags">
           <span>Flutter</span>
           <span>Firebase</span>
-          <span>Mobile App</span>
+          <span>Firestore</span>
         </div>
 
-        <a href="#" class="project-btn">View Project</a>
+        <div class="project-links">
+          <a href="#" target="_blank">Live Demo</a>
+          <a href="#" target="_blank">GitHub</a>
+        </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-icon">☕</div>
+      <!-- Project 2 -->
+      <div class="project-card" data-category="web javascript">
+        <div class="project-top">
+          <div class="project-icon">🌐</div>
+          <span class="status-badge completed">Live</span>
+        </div>
 
-        <h3>Coffee Shop Website</h3>
+        <h3>SkillHub Portfolio</h3>
 
         <p>
-          A modern responsive coffee shop website with animations, contact form,
-          gallery and professional layout.
+          A professional personal portfolio website built with HTML, CSS and
+          JavaScript. It includes dark mode, animations, project filters,
+          gallery, CV download and responsive design.
         </p>
 
         <div class="project-tags">
@@ -194,70 +240,164 @@
           <span>JavaScript</span>
         </div>
 
-        <a href="#" class="project-btn">View Project</a>
+        <div class="project-links">
+          <a href="https://sithumrd1-art.github.io/skillhub-portfolio/" target="_blank">
+            Live Demo
+          </a>
+          <a href="https://github.com/sithumrd1-art/skillhub-portfolio" target="_blank">
+            GitHub
+          </a>
+        </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-icon">💰</div>
+      <!-- Project 3 -->
+      <div class="project-card" data-category="web javascript">
+        <div class="project-top">
+          <div class="project-icon">☕</div>
+          <span class="status-badge completed">Completed</span>
+        </div>
+
+        <h3>Coffee Shop Website</h3>
+
+        <p>
+          A modern responsive coffee shop website with hero banner, about
+          section, gallery, contact form, animations and clean UI layout.
+        </p>
+
+        <div class="project-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+
+        <div class="project-links">
+          <a href="#" target="_blank">Live Demo</a>
+          <a href="#" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card" data-category="web javascript">
+        <div class="project-top">
+          <div class="project-icon">💰</div>
+          <span class="status-badge">Improving</span>
+        </div>
 
         <h3>Finance Tracker</h3>
 
         <p>
           A simple finance tracking system to manage income, expenses and
-          balance using clean UI design.
+          balance. It focuses on clean UI design and JavaScript logic.
         </p>
 
         <div class="project-tags">
           <span>JavaScript</span>
-          <span>UI Design</span>
           <span>Dashboard</span>
+          <span>UI Design</span>
         </div>
 
-        <a href="#" class="project-btn">View Project</a>
+        <div class="project-links">
+          <a href="#" target="_blank">Live Demo</a>
+          <a href="#" target="_blank">GitHub</a>
+        </div>
       </div>
+
+      <!-- Project 5 -->
+      <div class="project-card" data-category="web firebase javascript">
+        <div class="project-top">
+          <div class="project-icon">🎓</div>
+          <span class="status-badge planned">Planned</span>
+        </div>
+
+        <h3>Student Management System</h3>
+
+        <p>
+          A future web application for managing student records, courses,
+          attendance and results using JavaScript and Firebase.
+        </p>
+
+        <div class="project-tags">
+          <span>JavaScript</span>
+          <span>Firebase</span>
+          <span>CRUD</span>
+        </div>
+
+        <div class="project-links">
+          <a href="#" target="_blank">Live Demo</a>
+          <a href="#" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="project-card" data-category="mobile firebase flutter">
+        <div class="project-top">
+          <div class="project-icon">📝</div>
+          <span class="status-badge planned">Future</span>
+        </div>
+
+        <h3>Notes & Goals App</h3>
+
+        <p>
+          A planned mobile app for managing notes, daily goals and reminders
+          using Flutter, Firebase Authentication and Firestore database.
+        </p>
+
+        <div class="project-tags">
+          <span>Flutter</span>
+          <span>Firebase</span>
+          <span>Mobile</span>
+        </div>
+
+        <div class="project-links">
+          <a href="#" target="_blank">Live Demo</a>
+          <a href="#" target="_blank">GitHub</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- Gallery Section -->
   <section id="gallery" class="section gallery">
+    <p class="section-subtitle">Screenshots</p>
     <h2>Project Gallery</h2>
 
     <p>
       A collection of my learning projects, UI designs, certificates and
-      creative development work.
+      development progress.
     </p>
 
     <div class="gallery-grid">
       <div class="gallery-card">
-        <img src="images/image1.jpg" alt="Project Image 1" />
+        <img src="images/image1.jpg" alt="Web Design Screenshot" />
         <div class="gallery-overlay">
           <h3>Web Design</h3>
         </div>
       </div>
 
       <div class="gallery-card">
-        <img src="images/image2.jpg" alt="Project Image 2" />
+        <img src="images/image2.jpg" alt="Mobile App Screenshot" />
         <div class="gallery-overlay">
           <h3>Mobile App</h3>
         </div>
       </div>
 
       <div class="gallery-card">
-        <img src="images/image3.jpg" alt="Project Image 3" />
+        <img src="images/image3.jpg" alt="UI Design Screenshot" />
         <div class="gallery-overlay">
           <h3>UI Design</h3>
         </div>
       </div>
 
       <div class="gallery-card">
-        <img src="images/image4.jpg" alt="Project Image 4" />
+        <img src="images/image4.jpg" alt="Certificate Screenshot" />
         <div class="gallery-overlay">
           <h3>Certificate</h3>
         </div>
       </div>
 
       <div class="gallery-card">
-        <img src="images/image5.jpg" alt="Project Image 5" />
+        <img src="images/image5.jpg" alt="Learning Progress Screenshot" />
         <div class="gallery-overlay">
           <h3>Learning Progress</h3>
         </div>
@@ -267,7 +407,8 @@
 
   <!-- Stats Section -->
   <section class="section stats">
-    <h2>My Progress</h2>
+    <p class="section-subtitle">Progress</p>
+    <h2>My Learning Progress</h2>
 
     <div class="stats-grid">
       <div class="stat-card">
@@ -276,8 +417,8 @@
       </div>
 
       <div class="stat-card">
-        <h3><span class="counter" data-target="5">0</span>+</h3>
-        <p>Projects Completed</p>
+        <h3><span class="counter" data-target="6">0</span>+</h3>
+        <p>Projects Added</p>
       </div>
 
       <div class="stat-card">
@@ -289,6 +430,7 @@
 
   <!-- Roadmap Section -->
   <section id="roadmap" class="section roadmap">
+    <p class="section-subtitle">Future Plan</p>
     <h2>Learning Roadmap</h2>
 
     <div class="roadmap-box">
@@ -323,11 +465,20 @@
           <p>Node.js, APIs, databases and secure server-side development.</p>
         </div>
       </div>
+
+      <div class="roadmap-item">
+        <span>05</span>
+        <div>
+          <h3>Advanced Portfolio Version</h3>
+          <p>React version, Firebase backend, blog system and admin dashboard.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Learning Table Section -->
   <section class="section">
+    <p class="section-subtitle">Study Plan</p>
     <h2>Weekly Learning Plan</h2>
 
     <div class="table-wrapper">
@@ -350,25 +501,25 @@
           <tr>
             <td>Tuesday</td>
             <td>CSS Styling</td>
-            <td>Design cards and layout</td>
+            <td>Design cards and responsive layout</td>
           </tr>
 
           <tr>
             <td>Wednesday</td>
             <td>JavaScript</td>
-            <td>Add dark mode and animations</td>
+            <td>Add dark mode, filters and animations</td>
           </tr>
 
           <tr>
             <td>Thursday</td>
-            <td>Responsive Design</td>
-            <td>Test mobile view</td>
+            <td>Firebase</td>
+            <td>Practice authentication and database concepts</td>
           </tr>
 
           <tr>
             <td>Friday</td>
-            <td>Project Improvement</td>
-            <td>Update portfolio content</td>
+            <td>Flutter</td>
+            <td>Improve LifeOS mobile app features</td>
           </tr>
         </tbody>
       </table>
@@ -377,6 +528,7 @@
 
   <!-- Certificates Section -->
   <section class="section certificates">
+    <p class="section-subtitle">Achievements</p>
     <h2>Certificates</h2>
 
     <div class="cert-grid">
@@ -399,6 +551,7 @@
 
   <!-- Contact Section -->
   <section id="contact" class="section contact">
+    <p class="section-subtitle">Get In Touch</p>
     <h2>Contact Me</h2>
 
     <form>
@@ -409,11 +562,11 @@
     </form>
 
     <div class="social-links">
-      <a href="https://www.linkedin.com/in/sithum-ravishanka-539053377" target="_blank">LinkedIn</a>
       <a href="https://github.com/sithumrd1-art" target="_blank">GitHub</a>
-      <a href="mailto:sithum.ravishanka@gmail.com">Email</a>
-      <a href="https://www.facebook.com/sithum.ravishanka" target="_blank">Facebook</a>
-      <a href="https://wa.me/94771234567" target="_blank">WhatsApp</a>
+      <a href="#" target="_blank">LinkedIn</a>
+      <a href="mailto:your-email@gmail.com">Email</a>
+      <a href="#" target="_blank">Facebook</a>
+      <a href="#" target="_blank">WhatsApp</a>
     </div>
   </section>
 
@@ -424,7 +577,8 @@
 
       <p>
         Built with HTML, CSS and JavaScript to showcase my skills, projects,
-        certificates and learning journey.
+        certificates and learning journey. This portfolio will be continuously
+        improved with future projects and technologies.
       </p>
 
       <div class="footer-links">
@@ -434,7 +588,7 @@
         <a href="#contact">Contact</a>
       </div>
 
-      <p class="copyright">© 2026 SkillHub Portfolio. Designed by Raviz.</p>
+      <p class="copyright">© 2026 SkillHub Portfolio. Designed by Sithum.</p>
     </div>
   </footer>
 

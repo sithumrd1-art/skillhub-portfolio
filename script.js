@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const preloader = document.getElementById("preloader");
   const typingText = document.getElementById("typingText");
   const counters = document.querySelectorAll(".counter");
+  const scrollProgress = document.getElementById("scrollProgress");
 
   /* Preloader */
   function hidePreloader() {
@@ -54,6 +55,29 @@ document.addEventListener("DOMContentLoaded", function () {
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
 
+      const nameInput = contactForm.querySelector('input[type="text"]');
+      const emailInput = contactForm.querySelector('input[type="email"]');
+      const messageInput = contactForm.querySelector("textarea");
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const message = messageInput.value.trim();
+
+      if (name.length < 2) {
+        alert("Please enter a valid name.");
+        return;
+      }
+
+      if (!email.includes("@") || !email.includes(".")) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      if (message.length < 10) {
+        alert("Please enter a message with at least 10 characters.");
+        return;
+      }
+
       alert("Thank you! Your message has been submitted successfully.");
 
       contactForm.reset();
@@ -63,8 +87,9 @@ document.addEventListener("DOMContentLoaded", function () {
   /* Typing Effect */
   const words = [
     "Aspiring Software Developer",
-    "Web Development Learner",
     "Flutter App Developer",
+    "Web Development Learner",
+    "Firebase Project Builder",
     "Creative Problem Solver"
   ];
 
@@ -222,4 +247,49 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  /* Project Filter System */
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card");
+
+  filterButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      filterButtons.forEach(function (btn) {
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
+
+      const selectedFilter = button.getAttribute("data-filter");
+
+      projectCards.forEach(function (card) {
+        const categories = card.getAttribute("data-category");
+
+        if (selectedFilter === "all" || categories.includes(selectedFilter)) {
+          card.classList.remove("hide");
+        } else {
+          card.classList.add("hide");
+        }
+      });
+    });
+  });
+
+  /* Scroll Progress Bar */
+  function updateScrollProgress() {
+    if (!scrollProgress) return;
+
+    const scrollTop = window.scrollY;
+    const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    if (documentHeight <= 0) {
+      scrollProgress.style.width = "0%";
+      return;
+    }
+
+    const scrollPercent = (scrollTop / documentHeight) * 100;
+    scrollProgress.style.width = scrollPercent + "%";
+  }
+
+  window.addEventListener("scroll", updateScrollProgress);
+  updateScrollProgress();
 });

@@ -10,7 +10,12 @@ html {
 }
 
 body {
-  background: #f5f7ff;
+  background:
+    linear-gradient(rgba(245, 247, 255, 0.88), rgba(245, 247, 255, 0.88)),
+    url("images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: #111827;
   transition: 0.3s;
 }
@@ -747,7 +752,12 @@ body {
 
 /* Dark Mode */
 body.dark {
-  background: #0f172a;
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)),
+    url("images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: white;
 }
 
@@ -947,4 +957,22 @@ body.dark .project-links a:hover {
   .filter-btn {
     padding: 10px 16px;
   }
+}
+.section,
+.hero {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar,
+.hero-card,
+.focus-list,
+.skill-progress-card,
+.project-card,
+.stat-card,
+.cert-card,
+.roadmap-item,
+.learning-table,
+.filter-btn {
+  backdrop-filter: blur(8px);
 }
